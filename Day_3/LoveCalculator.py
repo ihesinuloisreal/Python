@@ -14,4 +14,13 @@ b += possible.lower().count("l")
 b += possible.lower().count("o")
 b += possible.lower().count("v")
 b += possible.lower().count("e")
-print(f"{a}{b}")
+
+outcome = int(f"{a}{b}") 
+
+if outcome < 10 or outcome > 90:
+    print(f"Your score is {outcome}, You guys are compatible")
+elif outcome >= 40 and outcome <= 50:
+    print(f"Your score is {outcome}, You guys are alright together")
+else:
+    print(f"Your score is {outcome}")
+    
