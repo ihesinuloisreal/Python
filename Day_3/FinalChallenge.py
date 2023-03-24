@@ -53,25 +53,25 @@ print('''
 ''')
 
 print("Welcome to treasure hunt. Your task is to find the traesure!!!")
-choice = input("You are at a cross road, Where would you love to go, Left or Right? (e.g. L for Left and R for Right) ")
+choice = input("You are at a cross road, Where would you love to go, Left or Right? (e.g. L for Left and R for Right) ").upper()
 
-if choice == "L" or choice == "l":
-    choice = input("You are standing infront of a river! do you want to swim or wait? (e.g. S for swim or W for wait) ")
-    if choice == "W" or choice == "w":
-        choice = input("Which door will you want to enter? Red(R), Yello(Y) or Blue(B) ")
-        if choice == "Y" or choice == "y":
+if choice == "L":
+    choice = input("You are standing infront of a river! do you want to swim or wait? (e.g. S for swim or W for wait) ").upper()
+    if choice == "W":
+        choice = input("Which door will you want to enter? Red(R), Yello(Y) or Blue(B) ").upper()
+        if choice == "Y":
             print("You win")
-        elif choice == "R" or choice == "r":
+        elif choice == "R":
             print("You Lose")
-        elif choice == "B" or choice == "b":
+        elif choice == "B":
             print("You Lose")
         else:
             print("invalid Input")
-    elif choice == "S" or choice == "s":
+    elif choice == "S":
         print("Game Over")
     else:
         print("Invalid Input")
-elif choice == "R" or choice == "r":
+elif choice == "R":
     print("Game Over")
 else:
     print("You've made an invalid input")
