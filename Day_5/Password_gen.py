@@ -15,6 +15,7 @@ lett = []
 nums = []
 symb = []
 
+
 for lt in range(1, nr_letters + 1):
     res=(random.randint(0, lt))
     lett.append(letters[res])
