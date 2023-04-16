@@ -18,4 +18,7 @@ for key in Student_score:
     elif score <= 70:
         Student_grade[key] = "Fail"
 
+Student_grade["Draco"] = "Failed"
+
+print()
 print(Student_grade)
