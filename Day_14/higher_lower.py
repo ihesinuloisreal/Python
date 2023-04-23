@@ -54,6 +54,17 @@ while res == True:
     #     res = False
 
 #     # print(responce)
+#     if check(responce) != True:
+#         res = False
+#     #     A["follower_count"] = B["follower_count"]
+#     #     B = generate()["follower_count"]
+#     #     print(B)
+#     # print(score)
+# answer = check(responce)
+# print(answer)
+
+# run()
+
 # print(score)
 
 # print(generate())
