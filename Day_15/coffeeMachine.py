@@ -30,11 +30,18 @@ resource = {
     "milk": 200,
     "coffee": 100
 }
+# Variable holding reftovers
+milk_left = resource["milk"]
+water_left = resource["water"]
+coffee_left = resource["coffee"]
+
+# Variables holding money value
 penny = 0.01
 nickel = 0.05
 dime = 0.10
 quarter = 0.25
 
+# Input for money to e paid for coffee
 penny *= int(input("Enter your penny "))
 nickel *= int(input("Enter your nickel "))
 dime *= int(input("Enter your dime "))
@@ -45,7 +52,7 @@ print(f"Penny = {penny}, Nickel = {nickel}, Dime = {dime}, Quarter = {quarter}")
 
 
 # TODO: Print Report
-def check_ingredent():
+def report():
     water = resource["water"]
     milk = resource["milk"]
     coffee = resource["coffee"]
@@ -53,22 +60,41 @@ def check_ingredent():
 
 # TODO: Choose Coffee flavor
 choice = input("Choose flavour: ").lower()
-if choice == "expresso":
-    # print("expresso")
-    cost = MENU["expresso"]
-    print(total - cost["cost"])
-elif choice == "latte":
-    # print("Latte")
-    cost = MENU["latte"]
-    change = total - cost["cost"]
-    print(f"You have {change} change left")
-elif choice == "cappuccino":
-    print("Cappuccino")
-    cost = MENU["cappuccino"]
-    print(total - cost["cost"])
-else:
-    print("Report")
-    check_ingredent()
+
+def coffee_processor(choice):
+    cost = MENU[choice]
+    if choice == "expresso":
+        check_amount(total, cost)
+        # print(total - cost["cost"])
+    elif choice == "latte":
+        # print("Latte")
+        check_amount(total, cost)
+        # cost = MENU["latte"]
+        
+    elif choice == "cappuccino":
+        # print("Cappuccino")
+        # cost = MENU["cappuccino"]
+        # print(total - cost["cost"])
+        output = check_amount(total, cost)
+    else:
+        print("Report")
+        report()
+
+
+
+
 # TODO: Check if amount is enough
+def check_amount(total, cost):
+    if total == cost["cost"]:
+        return "You dont have any change"
+    elif total < cost["cost"]:
+        return "Your money is not enough! Money refund"
+    else:
+        change = total - cost["cost"]
+        return f"You have {change} change left"
+        # print("Take change")
 # TODO: Chech if ingredents is enough to produce order
+# def check_ingredent():
+    
 # TODO: 
+coffee_processor(choice)
