@@ -22,3 +22,7 @@ from money_machine import MoneyMachine
 main_menu = Menu()
 coffee_m = CoffeeMaker()
 money = MoneyMachine()
+
+
+
+coffee_m.report()
