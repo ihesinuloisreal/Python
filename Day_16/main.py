@@ -27,7 +27,7 @@ money_machine = MoneyMachine()
 
 coffee_m.report()
 money_machine.report()
-# main_menu.get_items()
+main_menu.get_items()
 # main_menu.Name = input("Please Choose your coffee flavor? ")
 # money.process_coins()
 # money.make_payment(cost)
