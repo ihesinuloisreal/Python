@@ -19,15 +19,29 @@ from menu import Menu, MenuItem
 from coffee_maker import CoffeeMaker
 from money_machine import MoneyMachine
 
-main_menu = Menu()
-# main_menu_item = MenuItem(name, water, milk, coffee, cost)
-coffee_m = CoffeeMaker()
+menu = Menu()
+# menu_item = MenuItem(name, water, milk, coffee, cost)
+coffee_maker = CoffeeMaker()
 money_machine = MoneyMachine()
 
 
-coffee_m.report()
-money_machine.report()
-main_menu.get_items()
-# main_menu.Name = input("Please Choose your coffee flavor? ")
-# money.process_coins()
-# money.make_payment(cost)
+# coffee_maker.report()
+# money_machine.report()
+choice = input(f"Choose flavour: {menu.get_items()}")
+
+if choice == "report":
+    coffee_maker.report()
+    money_machine.report()
+
+else:
+    choice_out = menu.find_drink(choice)
+    cost = money_machine.process_coins()
+    out = coffee_maker.is_resource_sufficient(choice_out)
+    if out == True:
+        result = coffee_maker.make_coffee(choice_out)
+        # money_machine.make_payment(cost)
+
+        print(result)
+
+
+
