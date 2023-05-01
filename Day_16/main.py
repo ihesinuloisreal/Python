@@ -35,13 +35,14 @@ if choice == "report":
 
 else:
     choice_out = menu.find_drink(choice)
-    cost = money_machine.process_coins()
     out = coffee_maker.is_resource_sufficient(choice_out)
     if out == True:
-        result = coffee_maker.make_coffee(choice_out)
-        # money_machine.make_payment(cost)
+        money_machine.make_payment(choice_out.cost)
+        coffee_maker.make_coffee(choice_out)
+        money_machine.report()
 
-        print(result)
+
+        # print(result)
 
 
 
